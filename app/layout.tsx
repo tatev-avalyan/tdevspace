@@ -1,4 +1,6 @@
 import './globals.css';
+import "@ant-design/v5-patch-for-react-19";
+import "antd/dist/reset.css";
 import { Inter } from 'next/font/google';
 import { Providers } from './providers';
 import Navbar from '../components/Navbar';

@@ -1,0 +1,296 @@
+{
+  "app": {
+    "welcome": "Բարի գալուստ"
+  },
+  "navbar": {
+    "dashboard": "Վահանակ",
+    "users": "Օգտատերեր",
+    "orders": "Պատվերներ",
+    "verification": "Ստուգում",
+    "settings": "Կարգավորումներ",
+    "logout": "Դուրս գալ"
+  },
+  "dashboard": {
+    "title": "Վահանակ",
+    "statistics": {
+      "totalUsers": "Ընդհանուր օգտատերեր",
+      "activeDrivers": "Ակտիվ վարորդներ",
+      "activeClients": "Ակտիվ հաճախորդներ",
+      "activeOrders": "Ակտիվ պատվերներ"
+    },
+    "charts": {
+      "userTypes": "Օգտատերերի տեսակներ",
+      "orderStatus": "Պատվերի կարգավիճակ",
+      "weeklyActivity": "Շաբաթական ակտիվություն",
+      "driverHeatmap": "Վարորդների տեղաբաշխում"
+    },
+    "charts_data": {
+      "drivers": "Վարորդներ",
+      "clients": "Հաճախորդներ",
+      "pending": "Սպասվող",
+      "inProgress": "Ընթացքի մեջ",
+      "completed": "Ավարտված",
+      "cancelled": "Չեղարկված",
+      "orders": "Պատվերներ",
+      "newUsers": "Նոր օգտատերեր"
+    }
+  },
+  "users": {
+    "title": "Օգտատերերի կառավարում",
+    "addUser": "Ավելացնել օգտատեր",
+    "editUser": "Խմբագրել օգտատերին",
+    "deleteUser": "Հեռացնել օգտատերին",
+    "blockUser": "Արգելափակել օգտատերին",
+    "deleteConfirm": "Վստա՞հ եք, որ ցանկանում եք հեռացնել այս օգտատերին:",
+    "blockConfirm": "Վստա՞հ եք, որ ցանկանում եք արգելափակել այս օգտատերին:",
+    "equipments": "Սարքավորումներ",
+    "id": "Նույնացման համար",
+    "avatar": "Ավատար",
+    "firstName": "Անուն",
+    "lastName": "Ազգանուն",
+    "companyName": "Ընկերության անվանումը",
+    "email": "Էլ. հասցե",
+    "phone": "Հեռախոսահամար",
+    "password": "Գաղտնաբառ",
+    "role": "Դեր",
+    "isEmailVerified": "Էլ. հասցեն հաստատված է",
+    "isPhoneVerified": "Հեռախոսահամարը հաստատված է",
+    "isApproved": "Հաստատված է",
+    "rejectionReason": "Մերժման պատճառը",
+    "taxpayerRegistrationNumber": "Հարկ վճարողի համար",
+    "files": "Ֆայլեր",
+    "clientOrders": "Հաճախորդի պատվերներ",
+    "driverOrders": "Վարորդի պատվերներ",
+    "driverAdmin": "Վարորդների ադմին",
+    "managedDrivers": "Կառավարվող վարորդներ",
+    "equipment": "Սարքավորումներ",
+    "lastMaintenanceDate": "Վերջին տեխնիկական սպասարկման ամսաթիվ",
+    "age": "Տարիք",
+    "verificationStatus": "Վավերացման կարգավիճակ",
+    "createdAt": "Ստեղծվել է",
+    "updatedAt": "Թարմացվել է",
+    "header": {
+      "deleteConfirm": "Վստա՞հ եք, որ ցանկանում եք ջնջել այս օգտատիրոջը:",
+      "phoneCall": "Զանգահարել օգտատիրոջը",
+      "userDetails": "Օգտատիրոջ տվյալներ"
+    }
+  },
+  "forms": {
+    "create": "Ստեղծել",
+    "update": "Թարմացնել",
+    "name": "Անուն",
+    "description": "նկարագրություն",
+    "firstName": "Անուն",
+    "lastName": "Ազգանուն",
+    "email": "Էլ. հասցե",
+    "avatar": "Ավատար",
+    "password": "Գաղտնաբառ",
+    "phone": "Հեռախոսահամար",
+    "role": "Դեր",
+    "companyName": "Ընկերության անվանում",
+    "taxpayerRegistrationNumber": "Հարկ վճարողի գրանցման համար",
+    "equipments": "Սարքավորումներ",
+    "image": "Պատկեր",
+    "equipmentType": "Սարքավորման տեսակ",
+    "equipmentBrand": "Սարքավորման ապրանքանիշ",
+    "equipmentModel": "Սարքավորման մոդել",
+    "age": "Տարիք",
+    "client": "Հաճախորդ",
+    "driver": "Վարորդ",
+    "submit": "Հաստատել",
+    "save": "Պահպանել",
+    "cancel": "Չեղարկել",
+    "yes": "Այո",
+    "no": "Ոչ",
+    "currentPassword": "Կայուն գաղտնաբառ",
+    "newPassword": "Նոր գաղտնաբառ",
+    "confirmPassword": "Հաստատել նոր գաղտնաբառ"
+  },
+  "verification": {
+    "title": "Ստուգման հարցումներ",
+    "personalInfo": "Անձնական տվյալներ",
+    "vehicleInfo": "Տրանսպորտային միջոցի տվյալներ",
+    "documents": "Ներկայացված փաստաթղթեր",
+    "verify": "Հաստատել",
+    "reject": "Մերժել",
+    "noRequests": "Ստուգման սպասող հարցումներ չկան"
+  },
+  "equipments": {
+    "title": "Սարքավորումներ",
+    "add": "Ավելացնել սարքավորում",
+    "edit": "Խմբագրել սարքավորումը",
+    "name": "Անուն",
+    "type": "Տեսակ",
+    "model": "Մոդել",
+    "year": "Տարի",
+    "statusEq": "Կարգավիճակ",
+    "icon": "Պատկերակ",
+    "category": "Կատեգորիա",
+    "types": {
+      "bulldozer": "Բուլդոզեր",
+      "excavator": "Էքսկավատոր",
+      "backhoe": "Հետփորիչ",
+      "loader": "Բեռնիչ",
+      "skidSteer": "Միկրոբեռնիչ",
+      "crane": "Կռունկ"
+    },
+    "status": {
+      "active": "Ակտիվ",
+      "maintenance": "Սպասարկում",
+      "inactive": "Ոչ ակտիվ"
+    },
+    "actions": {
+      "update": "Թարմացնել",
+      "create": "Ստեղծել",
+      "delete": {
+        "title": "Դուք իսկապե՞ս ուզում եք ջնջել այս սարքավորումը:",
+        "content": "Այս գործողությունը չի կարող հետարկվել:"
+      }
+    },
+    "icons": {
+      "tractor": "Տրակտոր",
+      "construction": "Շինարարություն",
+      "truck": "Բեռնատար",
+      "heavyTruck": "Ծանր բեռնատար"
+    },
+    "requiredField": "Այս դաշտը պարտադիր է"
+  },
+  "settings": {
+    "title": "Կարգավորումներ",
+    "additionalSettings": "Լրացուցիչ կարգավորումներ",
+    "emailNotifications": "Էլ. նամակների ծանուցումներ",
+    "twoFactorAuthentication": "Երկու գործոնով հաստատում",
+    "languagePreference": "Լեզվի նախընտրություն",
+    "deactivateAccount": "Արգելափակել հաշիվը"
+  },
+  "changePassword": "Փոխել գաղտնաբառը",
+  "confirm": {
+    "deactivate": {
+      "title": "Հաստատել արգելափակումը",
+      "content": "Դուք իսկապե՞ս ուզում եք արգելափակել ձեր հաշիվը:"
+    }
+  },
+  "language": {
+    "english": "Անգլերեն",
+    "armenian": "Հայերեն",
+    "russian": "Ռուսերեն"
+  },
+  "clients": {
+    "title": "Clients",
+    "add": "Add Client",
+    "edit": "Edit Client",
+    "delete": "Delete Client",
+    "name": "Name",
+    "email": "Email",
+    "phone": "Phone",
+    "status": "Status",
+    "actions": {
+      "confirmDelete": {
+        "title": "Are you sure you want to delete this client?",
+        "content": "This action cannot be undone."
+      }
+    }
+  },
+  "pricingModel": {
+    "perHour": "Ժամային",
+    "perDay": "Օրական",
+    "perWeek": "Շաբաթական",
+    "perMonth": "Ամսական",
+    "perYear": "Տարեկան",
+    "perKilometer": "Կիլոմետրով",
+    "perTon": "Տոննայով",
+    "perTonKilometer": "Տոննա-կիլոմետրով",
+    "perTonMile": "Տոննա-մղոնով",
+    "perTonMileKilometer": "Տոննա-մղոն-կիլոմետրով",
+    "weekendSurcharge": "Հանգստյան օրերի հավելավճար",
+    "nightShiftSurcharge": "Գիշերային հերթափոխի հավելավճար",
+    "overtimeSurcharge": "Արտաժամյա հավելավճար",
+    "holidaySurcharge": "Տոնական օրերի հավելավճար",
+    "mobilityFee": "Տեղաշարժման վճար",
+    "standbyRate": "Սպասման դրույք",
+    "perKm": "Կիլոմետրով",
+    "perMile": "Մղոնով",
+    "perMeter": "Մետրով",
+    "perSquareMeter": "Քառակուսի մետրով",
+    "perCubicMeter": "Խորանարդ մետրով",
+    "perLift": "Բարձրացումով",
+    "perCycle": "Ցիկլով",
+    "perJob": "Աշխատանքով",
+    "perShift": "Հերթափոխով",
+    "perBlockHour": "Բլոկ ժամով",
+    "perCallOut": "Կանչով",
+    "perLoad": "Բեռնումով",
+    "perTrip": "Ուղևորությամբ",
+    "perWorkingHour": "Աշխատանքային ժամով",
+    "perFuelUsed": "Վառելիքի ծախսով",
+    "minimumCharge": "Նվազագույն վճար"
+  },
+  "pricingModels": {
+    "create": "Ստեղծել գնագոյացման մոդել",
+    "title": "Գնագոյացման մոդելներ",
+    "pricingTypes": "Գնագոյացման տեսակներ",
+    "equipments": "Գնագոյացման տեսակի սարքավորումներ"
+  },
+  "actions": {
+    "edit": "Խմբագրել",
+    "delete": "Ջնջել",
+    "yes": "Այո",
+    "no": "Ոչ",
+    "save": "Պահպանել",
+    "cancel": "Չեղարկել",
+    "confirm": "Հաստատել",
+    "back": "Հետ"
+  },
+  "common": {
+    "loading": "Բեռնվում է...",
+    "error": "Սխալ",
+    "success": "Հաջողություն",
+    "warning": "Զգուշացում",
+    "info": "Տեղեկատվություն",
+    "noData": "Տվյալներ չկան",
+    "search": "Որոնել",
+    "filter": "Ֆիլտրել",
+    "sort": "Տեսակավորել"
+  },
+  "orders": {
+    "title": "Պատվերներ",
+    "create": "Ստեղծել պատվեր",
+    "edit": {
+      "title": "Խմբագրել պատվերը"
+    },
+    "create": {
+      "title": "Ստեղծել նոր պատվեր"
+    },
+    "search": {
+      "placeholder": "Որոնել պատվերներ..."
+    },
+    "filter": {
+      "status": "Կարգավիճակ",
+      "date": "Ամսաթիվ",
+      "type": "Պատվերի տեսակ",
+      "client": "Հաճախորդ"
+    },
+    "status": {
+      "pending": "Սպասման մեջ",
+      "inProgress": "Ընթացքի մեջ",
+      "completed": "Ավարտված",
+      "cancelled": "Չեղարկված"
+    },
+    "messages": {
+      "createSuccess": "Պատվերը հաջողությամբ ստեղծվել է",
+      "updateSuccess": "Պատվերը հաջողությամբ թարմացվել է",
+      "deleteSuccess": "Պատվերը հաջողությամբ ջնջվել է",
+      "error": "Պատվերի մշակման ընթացքում սխալ է տեղի ունեցել"
+    },
+    "table": {
+      "id": "Պատվերի ID",
+      "client": "Հաճախորդ",
+      "driver": "Վարորդ",
+      "status": "Կարգավիճակ",
+      "type": "Տեսակ",
+      "price": "Գին",
+      "date": "Ամսաթիվ",
+      "actions": "Գործողություններ"
+    }
+  }
+}

@@ -1,0 +1,132 @@
+@import "./_variables.scss";
+
+body {
+    overflow-x: hidden;
+}
+
+button {
+    white-space: nowrap;
+}
+
+a {
+    color: $white;
+    text-decoration: none;
+    font-family: $font-base;
+    font-size: 16px !important;
+    &:hover {
+        color: $white;
+        opacity: 0.8;
+    }
+}
+
+.underlined_link {
+    display: block;
+    font-family: $font-base;
+    color: $black25;
+    text-decoration: underline;
+    font-weight: 400;
+    line-height: 24px;
+    font-size: 22px;
+    transition: all 0.3s ease;
+    &:hover {
+        opacity: 0.8;
+        color: $black25;
+        transition: all 0.3s ease;
+    }
+}
+
+@media (max-width: 768px) {
+    a {
+        font-size: 14px !important;
+    }
+}
+
+input {
+    border: 1px solid $gray8DC !important;
+    border-radius: 8px !important;
+    font-size: 12px !important;
+    font-weight: 400 !important;
+    padding: 14px;
+    color: $grayA1A !important;
+    font-family: $font-base !important;
+    width: 100%;
+    line-height: 15px;
+}
+
+.custom_checkbox {
+    max-width: 250px;
+    input {
+        min-width: auto !important;
+    }
+    .ant-checkbox-inner {
+        background-color: $white !important;
+        border-color: $greenCheck !important;
+    }
+    .ant-checkbox-checked .ant-checkbox-inner {
+        background-color: $greenCheck !important;
+        border-color: $greenCheck !important;
+    }
+    font-weight: 400 !important;
+    font-family: $font-base !important;
+    color: $black62 !important;
+    font-size: 12px !important;
+    .ant-checkbox-label {
+        padding-left: 4px !important;
+    }
+}
+
+.ant-form-item {
+    margin-bottom: 10px !important;
+}
+
+.border_btn {
+    border: 1px solid $gray8DC !important;
+    border-radius: 10px !important;
+    padding: 15px 20px !important;
+    font-size: 16px !important;
+    line-height: 11px !important;
+    font-weight: 400 !important;
+    color: $black25 !important;
+    font-family: $font-base !important;
+    height: 40px !important;
+    display: block !important;
+    cursor: pointer !important;
+    transition: all 0.3s ease-in-out !important;
+    &:hover {
+        opacity: 0.8 !important;
+        transition: all 0.3s ease-in-out !important;
+    }
+
+    @media (max-width: 991px) {
+        color: $black62 !important;
+        background-color: $white !important;
+        border: 0 !important;
+    }
+
+    @media (max-width: 768px) {
+        font-size: 12px !important;
+        line-height: 11px !important;
+        padding: 10px 10px !important;
+        height: 30px !important;
+        border: 0 !important;
+    }
+}
+
+.global_modal_overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.4);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.global_modal_container {
+    background: $backgroundWhite;
+    border-radius: 10px;
+    overflow: auto;
+}

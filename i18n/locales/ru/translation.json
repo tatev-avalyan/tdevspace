@@ -1,0 +1,269 @@
+{
+  "app": {
+    "title": "Панель администратора"
+  },
+  "navbar": {
+    "dashboard": "Панель",
+    "users": "Пользователи",
+    "orders": "Заказы",
+    "verification": "Верификация",
+    "settings": "Настройки",
+    "logout": "Выйти"
+  },
+  "dashboard": {
+    "title": "Панель",
+    "statistics": {
+      "totalUsers": "Всего пользователей",
+      "activeDrivers": "Активные водители",
+      "activeClients": "Активные клиенты",
+      "activeOrders": "Активные заказы"
+    },
+    "charts": {
+      "userTypes": "Типы пользователей",
+      "orderStatus": "Статус заказов",
+      "weeklyActivity": "Недельная активность",
+      "driverHeatmap": "Карта водителей"
+    },
+    "charts_data": {
+      "drivers": "Водители",
+      "clients": "Клиенты",
+      "pending": "В ожидании",
+      "inProgress": "В процессе",
+      "completed": "Завершенные",
+      "cancelled": "Отмененные",
+      "orders": "Заказы",
+      "newUsers": "Новые пользователи"
+    }
+  },
+  "users": {
+    "title": "Управление пользователями",
+    "addUser": "Добавить пользователя",
+    "editUser": "Редактировать пользователя",
+    "deleteUser": "Удалить пользователя",
+    "blockUser": "Заблокировать пользователя",
+    "deleteConfirm": "Вы уверены, что хотите удалить этого пользователя?",
+    "blockConfirm": "Вы уверены, что хотите заблокировать этого пользователя?",
+    "id": "ID",
+    "avatar": "Аватар",
+    "firstName": "Имя",
+    "lastName": "Фамилия",
+    "companyName": "Название компании",
+    "email": "Электронная почта",
+    "phone": "Телефон",
+    "password": "Пароль",
+    "role": "Роль",
+    "isEmailVerified": "Электронная почта подтверждена",
+    "isPhoneVerified": "Телефон подтверждён",
+    "isApproved": "Одобрен",
+    "rejectionReason": "Причина отказа",
+    "taxpayerRegistrationNumber": "Номер налогоплательщика",
+    "files": "Файлы",
+    "clientOrders": "Заказы клиента",
+    "driverOrders": "Заказы водителя",
+    "driverAdmin": "Админ водителей",
+    "managedDrivers": "Управляемые водители",
+    "equipment": "Оборудование",
+    "lastMaintenanceDate": "Дата последнего обслуживания",
+    "age": "Возраст",
+    "verificationStatus": "Статус верификации",
+    "createdAt": "Дата создания",
+    "updatedAt": "Дата обновления",
+    "header": {
+      "deleteConfirm": "Вы уверены, что хотите удалить этого пользователя?",
+      "phoneCall": "Позвонить пользователю",
+      "userDetails": "Детали пользователя"
+    }
+  },
+  "forms": {
+    "name": "Имя",
+    "description": "описание",
+    "firstName": "Имя",
+    "avatar": "Аватар",
+    "lastName": "Фамилия",
+    "email": "Эл. почта",
+    "password": "Пароль",
+    "phone": "Телефон",
+    "role": "Роль",
+    "companyName": "Название компании",
+    "taxpayerRegistrationNumber": "ИНН",
+    "equipments": "Оборудование",
+    "image": "Изображение",
+    "equipmentType": "Тип оборудования",
+    "equipmentBrand": "Марка оборудования",
+    "equipmentModel": "Модель оборудования",
+    "age": "Возраст",
+    "client": "Клиент",
+    "driver": "Водитель",
+    "submit": "Отправить",
+    "save": "Сохранить",
+    "cancel": "Отмена",
+    "yes": "Да",
+    "no": "Нет"
+  },
+  "verification": {
+    "title": "Запросы на верификацию",
+    "personalInfo": "Личная информация",
+    "vehicleInfo": "Информация о транспорте",
+    "documents": "Предоставленные документы",
+    "verify": "Подтвердить",
+    "reject": "Отклонить",
+    "noRequests": "Нет ожидающих запросов на верификацию"
+  },
+  "equipments": {
+    "title": "Оборудование",
+    "add": "Добавить оборудование",
+    "edit": "Редактировать оборудование",
+    "name": "Название",
+    "type": "Тип",
+    "model": "Модель",
+    "year": "Год",
+    "statusEq": "Статус",
+    "icon": "Иконка",
+    "types": {
+      "bulldozer": "Бульдозер",
+      "excavator": "Экскаватор",
+      "backhoe": "Экскаватор-погрузчик",
+      "loader": "Погрузчик",
+      "skidSteer": "Мини-погрузчик",
+      "crane": "Кран"
+    },
+    "status": {
+      "active": "Активный",
+      "maintenance": "На обслуживании",
+      "inactive": "Неактивный"
+    },
+    "actions": {
+      "update": "Обновить",
+      "create": "Создать",
+      "delete": {
+        "title": "Вы уверены, что хотите удалить это оборудование?",
+        "content": "Это действие нельзя отменить."
+      }
+    },
+    "icons": {
+      "tractor": "Трактор",
+      "construction": "Строительство",
+      "truck": "Грузовик",
+      "heavyTruck": "Тяжелый грузовик"
+    },
+    "requiredField": "Это поле обязательно для заполнения"
+  },
+  "clients": {
+    "title": "Клиенты",
+    "add": "Добавить клиента",
+    "edit": "Редактировать клиента",
+    "delete": "Удалить клиента",
+    "name": "Имя",
+    "email": "Эл. почта",
+    "phone": "Телефон",
+    "status": "Статус",
+    "actions": {
+      "confirmDelete": {
+        "title": "Вы уверены, что хотите удалить этого клиента?",
+        "content": "Это действие нельзя отменить."
+      }
+    }
+  },
+  "pricingModel": {
+    "perHour": "За час",
+    "perDay": "За день",
+    "perWeek": "За неделю",
+    "perMonth": "За месяц",
+    "perYear": "За год",
+    "perKilometer": "За километр",
+    "perTon": "За тонну",
+    "perTonKilometer": "За тонну-километр",
+    "perTonMile": "За тонну-милю",
+    "perTonMileKilometer": "За тонну-милю-километр",
+    "weekendSurcharge": "Доплата за выходные",
+    "nightShiftSurcharge": "Доплата за ночную смену",
+    "overtimeSurcharge": "Доплата за сверхурочные",
+    "holidaySurcharge": "Доплата за праздничные дни",
+    "mobilityFee": "Плата за мобильность",
+    "standbyRate": "Тариф ожидания",
+    "perKm": "За километр",
+    "perMile": "За милю",
+    "perMeter": "За метр",
+    "perSquareMeter": "За квадратный метр",
+    "perCubicMeter": "За кубический метр",
+    "perLift": "За подъем",
+    "perCycle": "За цикл",
+    "perJob": "За работу",
+    "perShift": "За смену",
+    "perBlockHour": "За блок часов",
+    "perCallOut": "За вызов",
+    "perLoad": "За загрузку",
+    "perTrip": "За поездку",
+    "perWorkingHour": "За рабочий час",
+    "perFuelUsed": "За использованное топливо",
+    "minimumCharge": "Минимальная плата"
+  },
+  "pricingModels": {
+    "create": "Создать модель ценообразования",
+    "title": "Модели ценообразования",
+    "pricingTypes": "Типы ценообразования",
+    "equipments": "Оборудование по типу ценообразования"
+  },
+  "actions": {
+    "edit": "Редактировать",
+    "delete": "Удалить",
+    "yes": "Да",
+    "no": "Нет",
+    "save": "Сохранить",
+    "cancel": "Отменить",
+    "confirm": "Подтвердить",
+    "back": "Назад"
+  },
+  "common": {
+    "loading": "Загрузка...",
+    "error": "Ошибка",
+    "success": "Успешно",
+    "warning": "Предупреждение",
+    "info": "Информация",
+    "noData": "Данные отсутствуют",
+    "search": "Поиск",
+    "filter": "Фильтр",
+    "sort": "Сортировка"
+  },
+  "orders": {
+    "title": "Заказы",
+    "create": "Создать заказ",
+    "edit": {
+      "title": "Редактировать заказ"
+    },
+    "create": {
+      "title": "Создать новый заказ"
+    },
+    "search": {
+      "placeholder": "Поиск заказов..."
+    },
+    "filter": {
+      "status": "Статус",
+      "date": "Дата",
+      "type": "Тип заказа",
+      "client": "Клиент"
+    },
+    "status": {
+      "pending": "В ожидании",
+      "inProgress": "В процессе",
+      "completed": "Завершен",
+      "cancelled": "Отменен"
+    },
+    "messages": {
+      "createSuccess": "Заказ успешно создан",
+      "updateSuccess": "Заказ успешно обновлен",
+      "deleteSuccess": "Заказ успешно удален",
+      "error": "Произошла ошибка при обработке заказа"
+    },
+    "table": {
+      "id": "ID заказа",
+      "client": "Клиент",
+      "driver": "Водитель",
+      "status": "Статус",
+      "type": "Тип",
+      "price": "Цена",
+      "date": "Дата",
+      "actions": "Действия"
+    }
+  }
+}

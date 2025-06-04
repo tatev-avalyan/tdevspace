@@ -3,9 +3,12 @@ import Image from 'next/image';
 import { motion } from 'framer-motion';
 import { useState } from 'react';
 import Logo from "../public/assets/logo.jpg";
+import { useTranslation } from "react-i18next";
+import LanguageSwitcher from "@/components/LanguageSwitcher/LanguageSwitcher";
 
 export default function Home() {
   const [lang, setLang] = useState<'en' | 'hy'>('en');
+  const { t } = useTranslation();
 
   return (
     <div className="flex flex-col items-center text-center space-y-6">
@@ -17,13 +20,14 @@ export default function Home() {
         <Image src={Logo} alt="TDevSpace Logo" width={120} height={120} className="rounded-full object-cover" />
       </motion.div>
 
+        <LanguageSwitcher />
       <motion.h1
         className="text-3xl sm:text-4xl md:text-5xl font-bold"
         initial={{ scale: 0.8, opacity: 0 }}
         animate={{ scale: 1, opacity: 1 }}
         transition={{ duration: 0.7, delay: 0.3 }}
       >
-        {lang === 'en' ? 'Welcome to TDevSpace 🚀' : 'Բարի գալուստ TDevSpace 🚀'}
+          {t('app.welcome') + ' TDevSpace 🚀'}
       </motion.h1>
 
       <motion.p

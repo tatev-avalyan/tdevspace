@@ -2,6 +2,8 @@
 import { ThemeProvider } from 'next-themes';
 import { useEffect, useState } from 'react';
 import { useTheme } from 'next-themes';
+import { AntdRegistry } from "@ant-design/nextjs-registry";
+import LanguageHydrationProvider from "@/components/LanguageSwitcher/LanguageHydrationProvider";
 
 function DebugTheme() {
   const { theme } = useTheme();
@@ -16,9 +18,14 @@ export function Providers({ children }: { children: React.ReactNode }) {
   useEffect(() => setMounted(true), []);
   if (!mounted) return null;
   return (
-    <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
-      <DebugTheme />
-      {children}
-    </ThemeProvider>
+      <AntdRegistry>
+        <LanguageHydrationProvider>
+          <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
+            <DebugTheme />
+            {children}
+          </ThemeProvider>
+        </LanguageHydrationProvider>
+      </AntdRegistry>
+
   );
 }
