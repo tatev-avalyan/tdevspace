@@ -1,11 +1,16 @@
 'use client';
-
+// ✅ 1. React core
 import { useEffect, useState } from 'react';
+// ✅ 2. Third-party libraries
 import { Menu, X } from 'lucide-react';
+import { useTranslation } from 'react-i18next';
+import { AnimatePresence } from 'framer-motion';
+// ✅ 3. Next.js utilities
 import Link from 'next/link';
+// ✅ 4. Internal components
 import LanguageSwitcher from '@/components/LanguageSwitcher/LanguageSwitcher';
 import ThemeToggle from '@/components/ThemeToggle';
-import { useTranslation } from 'react-i18next';
+import MobileSidebar from '@/components/MobileSidebar';
 
 const Navbar = () => {
   const [mounted, setMounted] = useState(false);
@@ -44,25 +49,17 @@ const Navbar = () => {
         </button>
       </div>
 
-      {/* Mobile Sidebar */}
-      {isOpen && (
-        <div className="fixed top-0 right-0 h-full w-64 bg-white dark:bg-gray-800 shadow-lg z-50 p-6 flex flex-col gap-6">
-          <button onClick={() => setIsOpen(false)} className="self-end">
-            <X size={24} />
-          </button>
-
-          {navItems.map((item) => (
-            <Link key={item.href} href={item.href} onClick={() => setIsOpen(false)}>
-              {item.label}
-            </Link>
-          ))}
-
-          <div className="pt-2 flex items-center justify-start gap-4">
-            <LanguageSwitcher />
-            {mounted && <ThemeToggle />}
-          </div>
-        </div>
-      )}
+      {/* Animated Mobile Sidebar */}
+      <AnimatePresence>
+        {isOpen && (
+          <MobileSidebar
+            isOpen={isOpen}
+            onClose={() => setIsOpen(false)}
+            navItems={navItems}
+            mounted={mounted}
+          />
+        )}
+      </AnimatePresence>
     </header>
   );
 };

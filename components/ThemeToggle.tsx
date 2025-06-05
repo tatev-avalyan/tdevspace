@@ -1,7 +1,8 @@
 "use client";
-
-import { useTheme } from "next-themes";
+// ✅ 1. React core
 import { useEffect, useState } from "react";
+// ✅ 2. Next.js-specific hooks or libraries
+import { useTheme } from "next-themes";
 
 interface ThemeToggleProps {
   className?: string;

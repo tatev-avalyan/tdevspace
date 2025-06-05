@@ -1,18 +1,14 @@
 'use client';
-import { ThemeProvider } from 'next-themes';
+// ✅ 1. React core
 import { useEffect, useState } from 'react';
-import { useTheme } from 'next-themes';
-import { AntdRegistry } from "@ant-design/nextjs-registry";
-import LanguageHydrationProvider from "@/components/LanguageSwitcher/LanguageHydrationProvider";
+// ✅ 2. Third-party libraries
+import { ThemeProvider } from 'next-themes';
+// ✅ 3. Framework-specific tools
+import { AntdRegistry } from '@ant-design/nextjs-registry';
+// ✅ 4. Project components
+import LanguageHydrationProvider from '@/components/LanguageSwitcher/LanguageHydrationProvider';
 
-const DebugTheme = () => {
-  const { theme } = useTheme();
-  useEffect(() => {
-  }, [theme]);
-  return null;
-}
-
-export function Providers({ children }: { children: React.ReactNode }) {
+const Providers = ({ children }: { children: React.ReactNode }) => {
   const [mounted, setMounted] = useState(false);
   useEffect(() => setMounted(true), []);
   if (!mounted) return null;
@@ -20,7 +16,6 @@ export function Providers({ children }: { children: React.ReactNode }) {
       <AntdRegistry>
         <LanguageHydrationProvider>
           <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
-            <DebugTheme />
             {children}
           </ThemeProvider>
         </LanguageHydrationProvider>
@@ -29,4 +24,4 @@ export function Providers({ children }: { children: React.ReactNode }) {
   );
 }
 
-export default DebugTheme;
+export default Providers;

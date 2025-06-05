@@ -1,7 +1,10 @@
 'use client';
 
+// ✅ 1. Framework core
 import Link from "next/link";
+// ✅ 2. Navigation utilities
 import { notFound } from "next/navigation";
+// ✅ 3. Internationalization
 import { useTranslation } from "react-i18next";
 
 const courses = [
@@ -79,11 +82,11 @@ const CourseDetails = ({ params }: { params: { slug: string } }) => {
   const { title, description, details } = course;
 
   return (
-    <div className="min-h-screen bg-gray-50 dark:bg-gray-900 text-gray-800 dark:text-gray-100">
+    <div className="min-h-screen text-gray-800 dark:text-gray-100">
       <div className="max-w-5xl mx-auto px-4 py-10">
         <Link
           href="/courses"
-          className="inline-block text-sm text-dark-600 mb-6"
+          className="inline-block text-sm text-brand hover:text-brand-light mb-6"
         >
           ← {t("course.backToCourses")}
         </Link>

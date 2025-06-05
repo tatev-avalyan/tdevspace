@@ -1,12 +1,16 @@
+// ✅ 1. Global styles
 import './globals.css';
+// ✅ 2. Third-party styles/libraries
 import "@ant-design/v5-patch-for-react-19";
 import "antd/dist/reset.css";
+// ✅ 3. Next.js-specific utilities
 import { Inter } from 'next/font/google';
-import { Providers } from './providers';
+// ✅ 4. Project-specific modules/components
+import Providers from './providers';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
-import Background from '@/public/assets/background.png';
-import Image from 'next/image';
+import AnimatedBackground from '@/components/AnimatedBackground';
+
 const inter = Inter({ subsets: ['latin'] });
 
 export const metadata = {
@@ -19,15 +23,9 @@ const RootLayout = ({ children }: { children: React.ReactNode }) => {
     <html lang="en" suppressHydrationWarning>
       <body className={`${inter.className} transition-colors duration-300`}>
         <div className="relative bg-white dark:bg-gray-900 text-gray-800 dark:text-gray-200 min-h-screen flex flex-col overflow-hidden">
-
-          {/* ✅ Background Layer */}
-          <Image
-            src={Background} 
-            alt="background"
-            fill
-            priority
-            className="object-cover dark:opacity-10 pointer-events-none select-none z-0"
-          />
+          
+          {/* ✅ Animated Background */}
+          <AnimatedBackground />
 
           {/* ✅ Content Overlay */}
           <Providers>

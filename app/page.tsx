@@ -1,9 +1,12 @@
 'use client';
-
+// ✅ 1. Framework utilities
 import Image from 'next/image';
+// ✅ 2. Third-party libraries
 import { motion } from 'framer-motion';
-import Logo from "@/public/assets/logo.png";
-import { useTranslation } from "react-i18next";
+import { useTranslation } from 'react-i18next';
+// ✅ 3. Static assets
+import Logo from '@/public/assets/logo.png';
+// ✅ 4. Project components
 import AboutComponent from '@/components/About';
 import CoursesComponent from '@/components/Courses';
 import ContactComponent from '@/components/Contact';

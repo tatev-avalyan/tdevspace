@@ -1,5 +1,7 @@
 'use client';
+// ✅ 1. React core
 import { useEffect, useState } from 'react';
+// ✅ 2. Third-party icons
 import { ArrowUp } from 'lucide-react';
 
 const ScrollToTopButton = () => {
