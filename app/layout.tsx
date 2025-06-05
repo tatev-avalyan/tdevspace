@@ -31,7 +31,7 @@ const RootLayout = ({ children }: { children: React.ReactNode }) => {
           <Providers>
             <div className="relative z-10 flex flex-col min-h-screen">
               <Navbar />
-              <main className="flex-1 p-4">{children}</main>
+              <main className="flex-1 p-4 pt-[53px]">{children}</main>
               <Footer />
             </div>
           </Providers>

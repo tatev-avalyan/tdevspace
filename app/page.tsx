@@ -19,7 +19,7 @@ const Home = () => {
   return (
     <div>
       {/* Hero Section */}
-      <div className='min-h-[90vh] flex flex-col items-center px-4 sm:px-6 lg:px-8 text-center space-y-10 max-w-5xl mx-auto'>
+      <div className='min-h-[90vh] flex flex-col items-center px-4 sm:px-6 lg:px-8 text-center space-y-10 max-w-5xl mx-auto pt-[40px]'>
         {/* Logo */}
         <motion.div
           initial={{ y: -30, opacity: 0 }}

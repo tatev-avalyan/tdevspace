@@ -1,4 +1,5 @@
 'use client';
+import { FacebookFilled, InstagramFilled } from '@ant-design/icons';
 import { useState } from 'react';
 
 const Contact = () => {
@@ -66,6 +67,24 @@ const Contact = () => {
           <div className="space-y-2">
             <p><strong>Email:</strong> <a href="mailto:tatevavalyan050@gmail.com" className="text-dark hover:underline">tatevavalyan050@gmail.com</a></p>
             <p><strong>Phone:</strong> <a href="tel:+37494174874" className="text-dark hover:underline">+374 94 174 874</a></p>
+            <div className="flex items-center gap-4 pt-2 text-2xl">
+              <a
+                href="https://instagram.com/tdevspace"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:text-gray transition-colors"
+                >
+                <InstagramFilled />
+              </a>
+              <a
+                href="https://facebook.com/tdevspace.2025"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:text-gray transition-colors"
+                >
+                <FacebookFilled />
+              </a>
+            </div>
             <p><strong>Address:</strong> 4/36 Hatis Street, Abovyan, Armenia</p>
           </div>
           <div className="w-full h-64 rounded-lg overflow-hidden border border-gray-300 dark:border-gray-600 shadow">

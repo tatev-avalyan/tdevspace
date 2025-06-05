@@ -26,7 +26,7 @@ const Navbar = () => {
   ];
 
   return (
-    <header className="w-full px-4 py-3 border-b border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-900 shadow-sm">
+    <header className="fixed top-0 left-0 w-full px-4 py-3 border-b border-gray-200 dark:border-gray-700 bg-dark dark:bg-gray-900 shadow-sm z-50">
       <div className="max-w-screen-xl mx-auto flex items-center justify-between">
         <Link href="/" className="text-xl font-bold">
           TDevSpace
