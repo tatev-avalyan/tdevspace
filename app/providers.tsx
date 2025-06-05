@@ -5,10 +5,9 @@ import { useTheme } from 'next-themes';
 import { AntdRegistry } from "@ant-design/nextjs-registry";
 import LanguageHydrationProvider from "@/components/LanguageSwitcher/LanguageHydrationProvider";
 
-function DebugTheme() {
+const DebugTheme = () => {
   const { theme } = useTheme();
   useEffect(() => {
-    console.log('Current theme:', theme);
   }, [theme]);
   return null;
 }
@@ -29,3 +28,5 @@ export function Providers({ children }: { children: React.ReactNode }) {
 
   );
 }
+
+export default DebugTheme;

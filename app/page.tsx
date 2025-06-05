@@ -1,54 +1,70 @@
 'use client';
+
 import Image from 'next/image';
 import { motion } from 'framer-motion';
-import { useState } from 'react';
-import Logo from "../public/assets/logo.jpg";
+import Logo from "@/public/assets/logo.png";
 import { useTranslation } from "react-i18next";
-import LanguageSwitcher from "@/components/LanguageSwitcher/LanguageSwitcher";
+import AboutComponent from '@/components/About';
+import CoursesComponent from '@/components/Courses';
+import ContactComponent from '@/components/Contact';
+import ScrollToTopButton from '@/components/ScrollToTopButton';
+import FadeInUp from '@/components/FadeInUp';
 
-export default function Home() {
-  const [lang, setLang] = useState<'en' | 'hy'>('en');
+const Home = () => {
   const { t } = useTranslation();
 
   return (
-    <div className="flex flex-col items-center text-center space-y-6">
-      <motion.div
-        initial={{ y: -30, opacity: 0 }}
-        animate={{ y: 0, opacity: 1 }}
-        transition={{ duration: 1 }}
-      >
-        <Image src={Logo} alt="TDevSpace Logo" width={120} height={120} className="rounded-full object-cover" />
-      </motion.div>
+    <div>
+      {/* Hero Section */}
+      <div className='min-h-[90vh] flex flex-col items-center px-4 sm:px-6 lg:px-8 text-center space-y-10 max-w-5xl mx-auto'>
+        {/* Logo */}
+        <motion.div
+          initial={{ y: -30, opacity: 0 }}
+          animate={{ y: 0, opacity: 1 }}
+          transition={{ duration: 1 }}
+        >
+          <Image
+            src={Logo}
+            alt="TDevSpace Logo"
+            width={200}
+            height={200}
+            className="object-contain"
+            priority
+          />
+        </motion.div>
 
-        <LanguageSwitcher />
-      <motion.h1
-        className="text-3xl sm:text-4xl md:text-5xl font-bold"
-        initial={{ scale: 0.8, opacity: 0 }}
-        animate={{ scale: 1, opacity: 1 }}
-        transition={{ duration: 0.7, delay: 0.3 }}
-      >
-          {t('app.welcome') + ' TDevSpace 🚀'}
-      </motion.h1>
+        {/* Title */}
+        <motion.h1
+          className="text-3xl sm:text-4xl md:text-5xl font-bold text-dark"
+          initial={{ scale: 0.8, opacity: 0 }}
+          animate={{ scale: 1, opacity: 1 }}
+          transition={{ duration: 0.7, delay: 0.3 }}
+        >
+          {t('home.title')} <span className="inline-block animate-bounce" role="img" aria-label="rocket">🚀</span>
+        </motion.h1>
 
-      <motion.p
-        className="max-w-xl text-base sm:text-lg"
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ duration: 0.7, delay: 0.6 }}
-      >
-        {lang === 'en'
-          ? 'Learn, build, and grow with expert mentorship, real projects, and modern tools.'
-          : 'Սովորեք, ստեղծեք և զարգացեք՝ իրական նախագծերով և փորձառու աջակցությամբ։'}
-      </motion.p>
-
-      <div className="mt-4 flex gap-3 flex-wrap justify-center">
-        <button onClick={() => setLang('en')} className={`px-4 py-2 text-sm sm:text-base rounded border ${lang === 'en' ? 'bg-blue-500 text-white' : 'bg-transparent dark:text-white'}`}>
-          English
-        </button>
-        <button onClick={() => setLang('hy')} className={`px-4 py-2 text-sm sm:text-base rounded border ${lang === 'hy' ? 'bg-blue-500 text-white' : 'bg-transparent dark:text-white'}`}>
-          Հայերեն
-        </button>
+        {/* Subtitle */}
+        <motion.p className="text-lg md:text-xl text-dark animate-fade-in delay-200">
+          {t('home.subtitle')}
+        </motion.p>
       </div>
+
+      {/* Sections */}
+      <FadeInUp>
+        <AboutComponent />
+      </FadeInUp>
+
+      <FadeInUp>
+        <CoursesComponent />
+      </FadeInUp>
+
+      <FadeInUp>
+        <ContactComponent />
+      </FadeInUp>
+
+      <ScrollToTopButton />
     </div>
   );
-}
+};
+
+export default Home;
