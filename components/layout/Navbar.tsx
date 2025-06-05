@@ -8,9 +8,9 @@ import { AnimatePresence } from 'framer-motion';
 // ✅ 3. Next.js utilities
 import Link from 'next/link';
 // ✅ 4. Internal components
-import LanguageSwitcher from '@/components/LanguageSwitcher/LanguageSwitcher';
-import ThemeToggle from '@/components/ThemeToggle';
-import MobileSidebar from '@/components/MobileSidebar';
+import LanguageSwitcher from '@/components/ui/LanguageSwitcher/LanguageSwitcher';
+import ThemeToggle from '@/components/ui/ThemeToggle';
+import MobileSidebar from '@/components/layout/MobileSidebar';
 
 const Navbar = () => {
   const [mounted, setMounted] = useState(false);

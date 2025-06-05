@@ -5,8 +5,8 @@ import { motion } from 'framer-motion';
 import { X } from 'lucide-react';
 import Link from 'next/link';
 // ✅ 2. Internal components
-import LanguageSwitcher from '@/components/LanguageSwitcher/LanguageSwitcher';
-import ThemeToggle from '@/components/ThemeToggle';
+import LanguageSwitcher from '@/components/ui/LanguageSwitcher/LanguageSwitcher';
+import ThemeToggle from '@/components/ui/ThemeToggle';
 // ✅ 3. Animations / utilities
 import { sidebarVariants } from '@/animations/sidebarVariants';
 

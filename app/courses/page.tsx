@@ -1,5 +1,5 @@
 'use client';
-import CoursesComponent from '@/components/Courses';
+import CoursesComponent from '@/components/sections/Courses';
 
 const Courses = () => {
   return (

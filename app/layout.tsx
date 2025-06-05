@@ -7,9 +7,9 @@ import "antd/dist/reset.css";
 import { Inter } from 'next/font/google';
 // ✅ 4. Project-specific modules/components
 import Providers from './providers';
-import Navbar from '@/components/Navbar';
-import Footer from '@/components/Footer';
-import AnimatedBackground from '@/components/AnimatedBackground';
+import Navbar from '@/components/layout/Navbar';
+import Footer from '@/components/layout/Footer';
+import AnimatedBackground from '@/components/layout/AnimatedBackground';
 
 const inter = Inter({ subsets: ['latin'] });
 

@@ -6,7 +6,7 @@ import { ThemeProvider } from 'next-themes';
 // ✅ 3. Framework-specific tools
 import { AntdRegistry } from '@ant-design/nextjs-registry';
 // ✅ 4. Project components
-import LanguageHydrationProvider from '@/components/LanguageSwitcher/LanguageHydrationProvider';
+import LanguageHydrationProvider from '@/components/ui/LanguageSwitcher/LanguageHydrationProvider';
 
 const Providers = ({ children }: { children: React.ReactNode }) => {
   const [mounted, setMounted] = useState(false);

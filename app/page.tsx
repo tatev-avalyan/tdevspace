@@ -7,11 +7,11 @@ import { useTranslation } from 'react-i18next';
 // ✅ 3. Static assets
 import Logo from '@/public/assets/logo.png';
 // ✅ 4. Project components
-import AboutComponent from '@/components/About';
-import CoursesComponent from '@/components/Courses';
-import ContactComponent from '@/components/Contact';
-import ScrollToTopButton from '@/components/ScrollToTopButton';
-import FadeInUp from '@/components/FadeInUp';
+import AboutComponent from '@/components/sections/About';
+import CoursesComponent from '@/components/sections/Courses';
+import ContactComponent from '@/components/sections/Contact';
+import ScrollToTopButton from '@/components/layout/ScrollToTopButton';
+import FadeInUp from '@/components/ui/FadeInUp';
 
 const Home = () => {
   const { t } = useTranslation();

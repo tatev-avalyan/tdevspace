@@ -67,7 +67,7 @@ const Courses = () => {
             <h3 className="text-xl font-semibold text-brand group-hover:text-brand-light transition-colors duration-200">
               {t(course.titleKey)}
             </h3>
-            <p className="mt-3 text-sm text-gray-700">
+            <p className="mt-3 text-sm dark:text-dark">
               {t(course.descriptionKey)}
             </p>
             <div className="mt-6">
