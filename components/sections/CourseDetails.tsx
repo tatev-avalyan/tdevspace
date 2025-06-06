@@ -6,7 +6,9 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 // ✅ 3. Internationalization
 import { useTranslation } from "react-i18next";
-import GradientButton from "../ui/GradientButton";
+import { use, useState } from "react";
+import GradientButton from "@/components/ui/GradientButton";
+import CourseApplyModal from "@/components/ui/CourseApplyModal";
 
 const courses = [
   {
@@ -75,9 +77,12 @@ const courses = [
   },
 ];
 
-const CourseDetails = ({ params }: { params: { slug: string } }) => {
+const CourseDetails = ({ params }: { params: Promise<{ slug: string }> }) => {
   const { t } = useTranslation();
-  const course = courses.find((c) => c.slug === params.slug);
+  const [showModal, setShowModal] = useState(false);
+  const { slug } = use(params);
+  const course = courses.find((c) => c.slug === slug);
+
   if (!course) return notFound();
 
   const { title, description, details } = course;
@@ -94,16 +99,16 @@ const CourseDetails = ({ params }: { params: { slug: string } }) => {
 
         {/* Hero Section */}
         <div className="w-full h-64 sm:h-72 md:h-80 flex items-center justify-center text-center rounded-xl bg-gradient-to-br from-brand to-brand-dark text-white px-4 shadow mb-8">
-          <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold leading-snug">
+          <h1 className="text-xl sm:text-4xl md:text-5xl font-bold leading-snug">
             {t(title)}
-            <span className="block text-lg sm:text-xl font-normal mt-3 opacity-90">
+            <span className="block text-base sm:text-xl font-normal mt-3 opacity-90">
               {t(description)}
             </span>
           </h1>
         </div>
 
         {/* Course Content */}
-        <div className="bg-white dark:bg-gray-800 rounded-xl shadow p-6 sm:p-10 space-y-8">
+        <div className="bg-gray-100 dark:bg-gray-800 rounded-xl shadow-xl p-6 sm:p-10 space-y-8">
           <div>
             <h2 className="text-xl font-semibold mb-2 text-brand">
               {t("course.overview")}
@@ -142,12 +147,21 @@ const CourseDetails = ({ params }: { params: { slug: string } }) => {
           </div>
 
           <div className="pt-6">
-            <GradientButton label={t("course.applyNow")} href="/contact" />
+            <GradientButton
+              label={t("course.applyNow")}
+              onClick={() => setShowModal(true)}
+              className="shadow-xl bg-gradient-to-r from-orange-500 to-yellow-400 text-white font-semibold text-base py-3 rounded-lg shadow-md hover:shadow-lg hover:scale-105 transition duration-300 ease-in-out"
+            />
           </div>
-
-
         </div>
       </div>
+
+      {showModal && (
+        <CourseApplyModal
+          onClose={() => setShowModal(false)}
+          courseName={t(title)}
+        />
+      )}
     </div>
   );
 };

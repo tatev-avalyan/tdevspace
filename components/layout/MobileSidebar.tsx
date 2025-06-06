@@ -25,7 +25,7 @@ const MobileSidebar = ({  onClose, navItems, mounted }: MobileSidebarProps) => {
       animate="open"
       exit="closed"
       variants={sidebarVariants}
-      className="fixed top-0 right-0 h-full w-64 bg-white dark:bg-gray-800 shadow-lg z-50 px-4 py-3 flex flex-col gap-6 overflow-hidden"
+      className="fixed top-0 right-0 h-full w-64 bg-gray-100 dark:bg-gray-800 shadow-xl z-50 px-4 py-3 flex flex-col gap-6 overflow-hidden"
     >
       <button onClick={onClose} className="self-end">
         <X size={24} />

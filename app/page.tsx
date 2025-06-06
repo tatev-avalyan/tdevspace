@@ -1,6 +1,7 @@
 'use client';
 // ✅ 1. Framework utilities
 import Image from 'next/image';
+import { useState } from 'react';
 // ✅ 2. Third-party libraries
 import { motion } from 'framer-motion';
 import { useTranslation } from 'react-i18next';
@@ -12,9 +13,12 @@ import CoursesComponent from '@/components/sections/Courses';
 import ContactComponent from '@/components/sections/Contact';
 import ScrollToTopButton from '@/components/layout/ScrollToTopButton';
 import FadeInUp from '@/components/ui/FadeInUp';
+import CourseApplyModal from '@/components/ui/CourseApplyModal';
 
 const Home = () => {
   const { t } = useTranslation();
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
 
   return (
     <div>
@@ -50,7 +54,22 @@ const Home = () => {
         <motion.p className="text-lg md:text-xl text-dark animate-fade-in delay-200">
           {t('home.subtitle')}
         </motion.p>
+
+        <motion.div
+          initial={{ y: -30, opacity: 0 }}
+          animate={{ y: 0, opacity: 1 }}
+          transition={{ duration: 1 }}
+        >
+          <button
+            onClick={() => setIsModalOpen(true)}
+            className="w-full bg-gradient-to-r from-orange-500 to-yellow-400 text-white font-semibold text-base p-3 rounded-lg shadow-md hover:shadow-lg hover:scale-105 transition duration-300 ease-in-out"
+          >
+            {t('apply.submit')}
+          </button>
+        </motion.div>
       </div>
+      
+      {isModalOpen && <CourseApplyModal onClose={() => setIsModalOpen(false)} />}
 
       {/* Sections */}
       <FadeInUp>

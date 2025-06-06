@@ -58,7 +58,7 @@ const Courses = () => {
             key={i}
             layout
             variants={cardVariants}
-            className="relative group bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-2xl p-6 shadow-md hover:shadow-lg hover:scale-[1.03] transition-all duration-300 cursor-pointer"
+            className="relative group bg-gray-100 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-2xl p-6 shadow-md hover:shadow-lg hover:scale-[1.03] transition-all duration-300 cursor-pointer"
             whileHover={{
               scale: 1.03,
               boxShadow: '0px 12px 28px rgba(0, 0, 0, 0.25)',

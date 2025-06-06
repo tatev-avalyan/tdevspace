@@ -9,8 +9,8 @@ const Contact = () => {
   const { t } = useTranslation();
 
   return (
-    <div className="min-h-[75vh] max-w-4xl mx-auto px-4 py-12">
-      <h2 className="text-3xl sm:text-4xl font-bold text-white text-center mb-8">
+    <div className="min-h-[75vh] max-w-5xl mx-auto px-4 py-12">
+      <h2 className="text-3xl sm:text-4xl font-bold  text-center mb-8">
         {t("contact.title")}
       </h2>
 
@@ -31,33 +31,33 @@ const Contact = () => {
               <input
                 type="text"
                 name="name"
-                placeholder="Your Name"
-                className="w-full px-4 py-2 border rounded-md bg-white dark:bg-gray-800 text-gray-800 dark:text-white border-gray-300 dark:border-gray-600"
+                placeholder={t('contact.form.name')}
+                className="w-full px-4 py-3 border rounded-md bg-white dark:bg-gray-800 text-gray-800 dark:text-white border-gray-300 dark:border-gray-600"
                 required
               />
               <input
                 type="email"
                 name="email"
-                placeholder="Your Email"
-                className="w-full px-4 py-2 border rounded-md bg-white dark:bg-gray-800 text-gray-800 dark:text-white border-gray-300 dark:border-gray-600"
+                placeholder={t('contact.form.email')}
+                className="w-full px-4 py-3 border rounded-md bg-white dark:bg-gray-800 text-gray-800 dark:text-white border-gray-300 dark:border-gray-600"
                 required
               />
               <input
                 type="tel"
                 name="phone"
-                placeholder="Phone Number (Optional)"
-                className="w-full px-4 py-2 border rounded-md bg-white dark:bg-gray-800 text-gray-800 dark:text-white border-gray-300 dark:border-gray-600"
+                placeholder={t('contact.form.phone')}
+                className="w-full px-4 py-3 border rounded-md bg-white dark:bg-gray-800 text-gray-800 dark:text-white border-gray-300 dark:border-gray-600"
               />
               <textarea
                 name="message"
-                placeholder="How can we help you?"
+                placeholder={t('contact.form.message')}
                 rows={5}
-                className="w-full px-4 py-2 border rounded-md bg-white dark:bg-gray-800 text-gray-800 dark:text-white border-gray-300 dark:border-gray-600"
+                className="w-full px-4 py-2 border rounded-md bg-white dark:bg-gray-800 text-gray-800 dark: border-gray-300 dark:border-gray-600"
                 required
               ></textarea>
               <button
                 type="submit"
-                className="w-full bg-gradient-to-r from-orange-500 to-yellow-400 text-white font-semibold text-base py-3 rounded-lg shadow-md hover:shadow-lg hover:scale-105 transition duration-300 ease-in-out"
+                className="w-full bg-gradient-to-r from-orange-500 to-yellow-400  font-semibold text-white py-3 rounded-lg shadow-lg hover:shadow-xl hover:scale-105 transition duration-300 ease-in-out"
               >
                 {t("contact.form.submit")}
               </button>
@@ -89,18 +89,18 @@ const Contact = () => {
                 <LinkedinOutlined className="text-orange-400 w-5 h-5" />
               </a>
             </div>
-            <div className="flex items-center gap-3 text-white text-sm">
+            <div className="flex items-center gap-3  text-sm">
               <PhoneOutlined className="text-orange-400 w-5 h-5" />
               <a href="tel:+37494174874" className="hover:underline">+374 94 174 874</a>
             </div>
-            <div className="flex items-center gap-3 text-white text-sm">
+            <div className="flex items-center gap-3  text-sm">
               <MailOutlined className="text-orange-400 w-5 h-5" />
               <a href="tatevavalyan050@gmail.com" className="hover:underline">tatevavalyan050@gmail.com</a>
             </div>
 
-            <div className="flex items-center gap-3 text-white text-sm">
+            <div className="flex items-center gap-3  text-sm">
               <EnvironmentOutlined className="text-orange-400 w-5 h-5" />
-              <p className='m-0'>4/36 Hatis Street, Abovyan, Armenia</p>
+              <p className='m-0'>{t("contact.info.address")}</p>
             </div>
           </div>
           <div className="w-full h-64 rounded-lg overflow-hidden border border-gray-300 dark:border-gray-600 shadow">
@@ -111,8 +111,7 @@ const Contact = () => {
               loading="lazy"
               allowFullScreen
               referrerPolicy="no-referrer-when-downgrade"
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3048.1161924169353!2d44.6249817!3d40.2759134!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4041f2b88d8e33ab%3A0x6a42b3f12139c637!2s4%2F36%20Hatis%20St%2C%20Abovyan%2C%20Armenia!5e0!3m2!1sen!2sam!4v1717085555555"
-            />
+              src="https://www.google.com/maps?q=40.275156,44.624629&z=15&output=embed"            />
           </div>
 
         </div>

@@ -17,7 +17,7 @@ const AnimatedBackground = () => {
   });
 
   return (
-    <div ref={ref} className="absolute inset-0 overflow-hidden pointer-events-none z-0">
+    <div ref={ref} className="absolute inset-0 overflow-hidden pointer-events-none z-10">
       <Image
         src={Background}
         alt="animated bg"
