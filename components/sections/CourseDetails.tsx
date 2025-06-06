@@ -6,6 +6,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 // ✅ 3. Internationalization
 import { useTranslation } from "react-i18next";
+import GradientButton from "../ui/GradientButton";
 
 const courses = [
   {
@@ -140,14 +141,11 @@ const CourseDetails = ({ params }: { params: { slug: string } }) => {
             </div>
           </div>
 
-          <div className="text-center pt-6">
-            <Link
-              href="/contact"
-              className="inline-block bg-brand hover:bg-brand-dark text-white text-sm sm:text-base font-medium px-6 py-3 rounded-lg shadow transition"
-            >
-              {t("course.applyNow")}
-            </Link>
+          <div className="pt-6">
+            <GradientButton label={t("course.applyNow")} href="/contact" />
           </div>
+
+
         </div>
       </div>
     </div>
