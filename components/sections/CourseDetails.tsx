@@ -7,6 +7,7 @@ import { notFound } from "next/navigation";
 // ✅ 3. Internationalization
 import { useTranslation } from "react-i18next";
 import GradientButton from "../ui/GradientButton";
+import {Params} from "next/dist/server/request/params";
 
 const courses = [
   {
@@ -75,7 +76,7 @@ const courses = [
   },
 ];
 
-const CourseDetails = ({ params }: { params: { slug: string } }) => {
+const CourseDetails = ({ params }: { params: Params }) => {
   const { t } = useTranslation();
   const course = courses.find((c) => c.slug === params.slug);
   if (!course) return notFound();
