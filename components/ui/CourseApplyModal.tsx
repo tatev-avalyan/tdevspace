@@ -10,7 +10,14 @@ const CourseApplyModal = ({ onClose, courseName }: { onClose: () => void; course
   const [submitted, setSubmitted] = useState(false);
   const { t } = useTranslation();
   const modalRef = useRef<HTMLDivElement>(null);
-
+  const [formData, setFormData] = useState({
+    to: '',
+    phone: '',
+    name: '',
+    course: courseName || "",
+  });
+  const [status, setStatus] = useState('');
+  console.log(status)
   // Close on outside click
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
@@ -21,6 +28,39 @@ const CourseApplyModal = ({ onClose, courseName }: { onClose: () => void; course
     document.addEventListener('mousedown', handleClickOutside);
     return () => document.removeEventListener('mousedown', handleClickOutside);
   }, [onClose]);
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setStatus('Sending...');
+    console.log(formData);
+    const res = await fetch('/api/send-email', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        to: formData.to,
+        subject: "Course Apply",
+        phone: formData.phone,
+        text: `Name: ${formData.name} applied to ${formData.course}`,
+      }),
+    });
+
+    if (res.ok) {
+      setStatus('Email sent successfully!');
+    } else {
+      setStatus('Failed to send email.');
+    }
+
+    setSubmitted(true);
+  };
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    console.log(e.target.value, "e.target.value")
+    setFormData((prev) => ({ ...prev, [e.target.name]: e.target.value }));
+  };
+
+  const handleSelectChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
+    setFormData((prev) => ({ ...prev, [e.target.name]: e.target.value }));
+  };
 
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/60 px-4">
@@ -47,7 +87,7 @@ const CourseApplyModal = ({ onClose, courseName }: { onClose: () => void; course
           <form
             action="https://formspree.io/f/xoqgllzy"
             method="POST"
-            onSubmit={() => setSubmitted(true)}
+            onSubmit={handleSubmit}
             className="space-y-4"
           >
             <input type="hidden" name="subject" value={`${t('apply.subject')} - ${courseName || ''}`} />
@@ -55,19 +95,25 @@ const CourseApplyModal = ({ onClose, courseName }: { onClose: () => void; course
               type="text"
               name="name"
               placeholder={t('apply.name')}
+              value={formData.name}
+              onChange={handleChange}
               className="w-full px-4 py-3 border rounded-md bg-white dark:bg-gray-800 text-gray-800 dark:text-white border-gray-300 dark:border-gray-600"
               required
             />
             <input
               type="email"
-              name="email"
+              name="to"
               placeholder={t('apply.email')}
+              value={formData.to}
+              onChange={handleChange}
               className="w-full px-4 py-3 border rounded-md bg-white dark:bg-gray-800 text-gray-800 dark:text-white border-gray-300 dark:border-gray-600"
               required
             />
             <input
               type="tel"
               name="phone"
+              value={formData.phone}
+              onChange={handleChange}
               placeholder={t('apply.phone')}
               className="w-full px-4 py-3 border rounded-md bg-white dark:bg-gray-800 text-gray-800 dark:text-white border-gray-300 dark:border-gray-600"
             />
@@ -83,7 +129,9 @@ const CourseApplyModal = ({ onClose, courseName }: { onClose: () => void; course
               <select
                 name="course"
                 required
+                value={formData.course}
                 className="w-full px-4 py-3 border rounded-md bg-white dark:bg-gray-800 text-gray-800 dark:text-white border-gray-300 dark:border-gray-600"
+                onChange={handleSelectChange}
               >
                 <option value="">{t('apply.selectCourse')}</option>
                 {AVAILABLE_COURSES.map((course, index) => (

@@ -6,7 +6,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 // ✅ 3. Internationalization
 import { useTranslation } from "react-i18next";
-import { use, useState } from "react";
+import { useState } from "react";
 import GradientButton from "@/components/ui/GradientButton";
 import CourseApplyModal from "@/components/ui/CourseApplyModal";
 import {Params} from "next/dist/server/request/params";
@@ -14,10 +14,10 @@ import {Params} from "next/dist/server/request/params";
 // ✅ Constant data
 import { COURSES } from "@/constants/courses";
 
-const CourseDetails = ({ params }: { params: Promise<{ slug: string }> }) => {
+const CourseDetails = ({ params }: { params: Params }) => {
   const { t } = useTranslation();
   const [showModal, setShowModal] = useState(false);
-  const { slug } = use(params);
+  const { slug } = params;
   const course = COURSES.find((c) => c.slug === slug);
 
   if (!course) return notFound();

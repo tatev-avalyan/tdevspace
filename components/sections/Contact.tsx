@@ -5,8 +5,43 @@ import { useTranslation } from 'react-i18next';
 
 const Contact = () => {
   const [submitted, setSubmitted] = useState(false);
-
   const { t } = useTranslation();
+  const [status, setStatus] = useState('');
+  const [formData, setFormData] = useState({
+    to: '',
+    phone: '',
+    name: '',
+    text: ''
+  });
+  console.log(status, "status")
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setStatus('Sending...');
+    console.log(formData);
+    const res = await fetch('/api/send-email', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        to: formData.to,
+        subject: "Contact us",
+        phone: formData.phone,
+        text: `Name: ${formData.name} send contact email ${formData.text}`,
+      }),
+    });
+
+    if (res.ok) {
+      setStatus('Email sent successfully!');
+    } else {
+      setStatus('Failed to send email.');
+    }
+
+    setSubmitted(true)
+  };
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    setFormData((prev) => ({ ...prev, [e.target.name]: e.target.value }));
+  };
 
   return (
     <div className="min-h-[75vh] max-w-5xl mx-auto px-4 py-12">
@@ -25,19 +60,23 @@ const Contact = () => {
             <form
               action="https://formspree.io/f/xoqgllzy"
               method="POST"
-              onSubmit={() => setSubmitted(true)}
+              onSubmit={handleSubmit}
               className="space-y-4"
             >
               <input
                 type="text"
                 name="name"
+                value={formData.name}
+                onChange={handleChange}
                 placeholder={t('contact.form.name')}
                 className="w-full px-4 py-3 border rounded-md bg-white dark:bg-gray-800 text-gray-800 dark:text-white border-gray-300 dark:border-gray-600"
                 required
               />
               <input
                 type="email"
-                name="email"
+                name="to"
+                value={formData.to}
+                onChange={handleChange}
                 placeholder={t('contact.form.email')}
                 className="w-full px-4 py-3 border rounded-md bg-white dark:bg-gray-800 text-gray-800 dark:text-white border-gray-300 dark:border-gray-600"
                 required
@@ -45,11 +84,15 @@ const Contact = () => {
               <input
                 type="tel"
                 name="phone"
+                value={formData.phone}
+                onChange={handleChange}
                 placeholder={t('contact.form.phone')}
                 className="w-full px-4 py-3 border rounded-md bg-white dark:bg-gray-800 text-gray-800 dark:text-white border-gray-300 dark:border-gray-600"
               />
               <textarea
                 name="message"
+                value={formData.text}
+                onChange={handleChange}
                 placeholder={t('contact.form.message')}
                 rows={5}
                 className="w-full px-4 py-2 border rounded-md bg-white dark:bg-gray-800 text-gray-800 dark: border-gray-300 dark:border-gray-600"
