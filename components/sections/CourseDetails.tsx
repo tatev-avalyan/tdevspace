@@ -6,79 +6,20 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 // ✅ 3. Internationalization
 import { useTranslation } from "react-i18next";
-import GradientButton from "../ui/GradientButton";
+import { use, useState } from "react";
+import GradientButton from "@/components/ui/GradientButton";
+import CourseApplyModal from "@/components/ui/CourseApplyModal";
 import {Params} from "next/dist/server/request/params";
 
-const courses = [
-  {
-    title: "course.js.title",
-    slug: "javascript-fundamentals",
-    description: "course.js.description",
-    details: {
-      summary: "course.js.summary",
-      points: [
-        "course.js.point1",
-        "course.js.point2",
-        "course.js.point3",
-        "course.js.point4",
-      ],
-      duration: "course.js.duration",
-      tuition: "course.js.tuition",
-    },
-  },
-  {
-    title: "course.react.title",
-    slug: "react-redux-mastery",
-    description: "course.react.description",
-    details: {
-      summary: "course.react.summary",
-      points: [
-        "course.react.point1",
-        "course.react.point2",
-        "course.react.point3",
-        "course.react.point4",
-      ],
-      duration: "course.react.duration",
-      tuition: "course.react.tuition",
-    },
-  },
-  {
-    title: "course.kids.title",
-    slug: "web-dev-for-kids",
-    description: "course.kids.description",
-    details: {
-      summary: "course.kids.summary",
-      points: [
-        "course.kids.point1",
-        "course.kids.point2",
-        "course.kids.point3",
-        "course.kids.point4",
-      ],
-      duration: "course.kids.duration",
-      tuition: "course.kids.tuition",
-    },
-  },
-  {
-    title: "course.math.title",
-    slug: "math-enrichment",
-    description: "course.math.description",
-    details: {
-      summary: "course.math.summary",
-      points: [
-        "course.math.point1",
-        "course.math.point2",
-        "course.math.point3",
-        "course.math.point4",
-      ],
-      duration: "course.math.duration",
-      tuition: "course.math.tuition",
-    },
-  },
-];
+// ✅ Constant data
+import { COURSES } from "@/constants/courses";
 
-const CourseDetails = ({ params }: { params: Params }) => {
+const CourseDetails = ({ params }: { params: Promise<{ slug: string }> }) => {
   const { t } = useTranslation();
-  const course = courses.find((c) => c.slug === params.slug);
+  const [showModal, setShowModal] = useState(false);
+  const { slug } = use(params);
+  const course = COURSES.find((c) => c.slug === slug);
+
   if (!course) return notFound();
 
   const { title, description, details } = course;
@@ -95,16 +36,16 @@ const CourseDetails = ({ params }: { params: Params }) => {
 
         {/* Hero Section */}
         <div className="w-full h-64 sm:h-72 md:h-80 flex items-center justify-center text-center rounded-xl bg-gradient-to-br from-brand to-brand-dark text-white px-4 shadow mb-8">
-          <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold leading-snug">
+          <h1 className="text-xl sm:text-4xl md:text-5xl font-bold leading-snug">
             {t(title)}
-            <span className="block text-lg sm:text-xl font-normal mt-3 opacity-90">
+            <span className="block text-base sm:text-xl font-normal mt-3 opacity-90">
               {t(description)}
             </span>
           </h1>
         </div>
 
         {/* Course Content */}
-        <div className="bg-white dark:bg-gray-800 rounded-xl shadow p-6 sm:p-10 space-y-8">
+        <div className="bg-gray-100 dark:bg-gray-800 rounded-xl shadow-xl p-6 sm:p-10 space-y-8">
           <div>
             <h2 className="text-xl font-semibold mb-2 text-brand">
               {t("course.overview")}
@@ -143,12 +84,21 @@ const CourseDetails = ({ params }: { params: Params }) => {
           </div>
 
           <div className="pt-6">
-            <GradientButton label={t("course.applyNow")} href="/contact" />
+            <GradientButton
+              label={t("course.applyNow")}
+              onClick={() => setShowModal(true)}
+              className="shadow-xl bg-gradient-to-r from-orange-500 to-yellow-400 text-white font-semibold text-base py-3 rounded-lg shadow-md hover:shadow-lg hover:scale-105 transition duration-300 ease-in-out"
+            />
           </div>
-
-
         </div>
       </div>
+
+      {showModal && (
+        <CourseApplyModal
+          onClose={() => setShowModal(false)}
+          courseName={t(title)}
+        />
+      )}
     </div>
   );
 };

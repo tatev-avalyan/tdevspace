@@ -10,7 +10,6 @@
       "title": "What We Offer",
       "mentorship": "Real Mentorship: Students are guided by experienced developers who provide real feedback, code reviews, and support.",
       "projects": "Project-Based Learning: Every course includes real-world projects so learners graduate with a portfolio they can showcase.",
-      "bilingual": "Bilingual Support: We offer all materials and mentorship in both English and Armenian.",
       "forAll": "For All Ages & Levels: Whether you’re just starting out or preparing for a tech career, we tailor our approach to your level."
     },
     "mission": {
@@ -24,16 +23,16 @@
     "title": "Get in Touch with TDevSpace",
     "success": "Thank you! We’ll get back to you soon.",
     "form": {
-      "name": "Your Name",
-      "email": "Your Email",
-      "phone": "Phone Number (Optional)",
+      "name": "Full Name",
+      "email": "Email Address",
+      "phone": "Phone Number",
       "message": "How can we help you?",
       "submit": "Send Request"
     },
     "info": {
       "email": "Email",
       "phone": "Phone",
-      "address": "Address"
+      "address": "2nd Microdistrict, 18/1, Abovyan, Armenia"
     }
   },
   "courses": {
@@ -110,6 +109,17 @@
       "duration": "Flexible Duration",
       "tuition": "15,000 AMD/Month"
     }
+  },
+  "apply": {
+    "heading": "Which course would you like to apply for?",
+    "headingWithCourse": "Apply to this course",
+    "success": "✅ Thank you! We’ll contact you soon",
+    "subject": "Course Application",
+    "name": "Full Name",
+    "email": "Email Address",
+    "phone": "Phone Number",
+    "selectCourse": "Select a course",
+    "submit": "Apply"
   },
   "footer": {
     "rights": "TDevSpace. All rights reserved."
