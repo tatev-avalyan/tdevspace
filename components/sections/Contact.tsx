@@ -95,7 +95,7 @@ const Contact = () => {
             </div>
             <div className="flex items-center gap-3  text-sm">
               <MailOutlined className="text-orange-400 w-5 h-5" />
-              <a href="tatevavalyan050@gmail.com" className="hover:underline">tatevavalyan050@gmail.com</a>
+              <a href="mailto:tatevavalyan050@gmail.com" className="hover:underline">tatevavalyan050@gmail.com</a>
             </div>
 
             <div className="flex items-center gap-3  text-sm">

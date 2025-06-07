@@ -7,6 +7,7 @@ import { useTranslation } from 'react-i18next';
 
 // ✅ 2. Project-specific imports
 import { cardVariants } from '@/animations/cardVariants';
+import { useState, useEffect } from 'react';
 
 const courses = [
   {
@@ -33,7 +34,14 @@ const courses = [
 
 const Courses = () => {
   const { t } = useTranslation();
+  const [mounted, setMounted] = useState(false);
 
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
+  if (!mounted) return null; 
+  
   return (
     <div className="min-h-[75vh] max-w-5xl mx-auto py-12 px-4">
       <motion.h2

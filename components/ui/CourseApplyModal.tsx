@@ -1,22 +1,37 @@
 'use client';
 
-import { useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 
 const availableCourses = [
   'course.js.title',
   'course.react.title',
   'course.kids.title',
-  'course.math.title'
+  'course.math.title',
 ];
 
 const CourseApplyModal = ({ onClose, courseName }: { onClose: () => void; courseName?: string }) => {
   const [submitted, setSubmitted] = useState(false);
   const { t } = useTranslation();
+  const modalRef = useRef<HTMLDivElement>(null);
+
+  // Close on outside click
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (modalRef.current && !modalRef.current.contains(event.target as Node)) {
+        onClose();
+      }
+    };
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => document.removeEventListener('mousedown', handleClickOutside);
+  }, [onClose]);
 
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/60 px-4">
-      <div className="bg-white dark:bg-gray-900 text-black dark:text-white rounded-xl shadow-xl max-w-md w-full p-6 relative">
+      <div
+        ref={modalRef}
+        className="bg-white dark:bg-gray-900 text-black dark:text-white rounded-xl shadow-xl max-w-md w-full p-6 relative"
+      >
         <button
           onClick={onClose}
           className="absolute top-3 right-4 text-xl text-gray-500 hover:text-gray-800 dark:hover:text-white"
@@ -76,7 +91,9 @@ const CourseApplyModal = ({ onClose, courseName }: { onClose: () => void; course
               >
                 <option value="">{t('apply.selectCourse')}</option>
                 {availableCourses.map((course, index) => (
-                  <option key={index} value={course}>{t(course)}</option>
+                  <option key={index} value={course}>
+                    {t(course)}
+                  </option>
                 ))}
               </select>
             )}
