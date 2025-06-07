@@ -3,12 +3,8 @@
 import { useEffect, useRef, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 
-const availableCourses = [
-  'course.js.title',
-  'course.react.title',
-  'course.kids.title',
-  'course.math.title',
-];
+// ✅ Constant data
+import { AVAILABLE_COURSES } from "@/constants/courses";
 
 const CourseApplyModal = ({ onClose, courseName }: { onClose: () => void; courseName?: string }) => {
   const [submitted, setSubmitted] = useState(false);
@@ -90,7 +86,7 @@ const CourseApplyModal = ({ onClose, courseName }: { onClose: () => void; course
                 className="w-full px-4 py-3 border rounded-md bg-white dark:bg-gray-800 text-gray-800 dark:text-white border-gray-300 dark:border-gray-600"
               >
                 <option value="">{t('apply.selectCourse')}</option>
-                {availableCourses.map((course, index) => (
+                {AVAILABLE_COURSES.map((course, index) => (
                   <option key={index} value={course}>
                     {t(course)}
                   </option>

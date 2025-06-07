@@ -9,28 +9,8 @@ import { useTranslation } from 'react-i18next';
 import { cardVariants } from '@/animations/cardVariants';
 import { useState, useEffect } from 'react';
 
-const courses = [
-  {
-    titleKey: 'courses.js.title',
-    descriptionKey: 'courses.js.description',
-    slug: 'javascript-fundamentals',
-  },
-  {
-    titleKey: 'courses.react.title',
-    descriptionKey: 'courses.react.description',
-    slug: 'react-redux-mastery',
-  },
-  {
-    titleKey: 'courses.kids.title',
-    descriptionKey: 'courses.kids.description',
-    slug: 'web-dev-for-kids',
-  },
-  {
-    titleKey: 'courses.math.title',
-    descriptionKey: 'courses.math.description',
-    slug: 'math-enrichment',
-  },
-];
+// ✅ 3. Constant data
+import { COURSES } from "@/constants/courses";
 
 const Courses = () => {
   const { t } = useTranslation();
@@ -41,7 +21,7 @@ const Courses = () => {
   }, []);
 
   if (!mounted) return null; 
-  
+
   return (
     <div className="min-h-[75vh] max-w-5xl mx-auto py-12 px-4">
       <motion.h2
@@ -61,7 +41,7 @@ const Courses = () => {
         transition={{ staggerChildren: 0.15 }}
         className="grid grid-cols-1 sm:grid-cols-2 gap-8"
       >
-        {courses.map((course, i) => (
+        {COURSES.map((course, i) => (
           <motion.div
             key={i}
             layout
@@ -73,10 +53,10 @@ const Courses = () => {
             }}
           >
             <h3 className="text-xl font-semibold text-brand group-hover:text-brand-light transition-colors duration-200">
-              {t(course.titleKey)}
+              {t(course.title)}
             </h3>
             <p className="mt-3 text-sm dark:text-dark">
-              {t(course.descriptionKey)}
+              {t(course.description)}
             </p>
             <div className="mt-6">
               <Link href={`/courses/${course.slug}`}>
